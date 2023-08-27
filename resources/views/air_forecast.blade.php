@@ -80,6 +80,9 @@
 
             </tbody>
     </table>
+{{--                <div class="d-flex">--}}
+{{--                    {!! $api->links() !!}--}}
+{{--                </div>--}}
         </div>
         </div>
     </div>

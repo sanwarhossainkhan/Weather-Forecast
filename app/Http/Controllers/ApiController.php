@@ -210,7 +210,7 @@ class ApiController extends Controller
     public function weather_forecast_data_city($id){
         try {
 
-            $api=Forecast::where('city',$id)->orderBy('id','asc')->get(['data','city','created_at']);
+            $api=Forecast::where('city',$id)->orderBy('id','asc')->paginate();
 
             return view('weather_forecast',compact('api','id'));
         }
@@ -224,7 +224,7 @@ class ApiController extends Controller
     public function air_forecast_data_city($id){
         try {
 
-            $api=AirForecast::where('city',$id)->orderBy('id','asc')->get(['data','city','created_at']);
+            $api=AirForecast::where('city',$id)->orderBy('id','asc')->paginate();
 
             return view('air_forecast',compact('api','id'));
         }

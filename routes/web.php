@@ -29,3 +29,7 @@ Route::get('air-forecast/{id}',[ApiController::class,'air_forecast_data_city'])-
 Route::get('airforecast',[ApiController::class,'airforecast']);
 Route::get('airforecastdata',[ApiController::class,'airforecastdata']);
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('homes');
