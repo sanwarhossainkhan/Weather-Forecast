@@ -18,7 +18,17 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->call('App\Http\Controllers\ApiController@getWeather')
-            ->everyFiveMinutes();
+            ->everyMinute();
+
+//        $schedule->call('App\Http\Controllers\ApiController@Weatherforecast')
+//            ->dailyAt('12:01');
+        $schedule->call('App\Http\Controllers\ApiController@Weatherforecast')
+            ->everyMinute();
+
+//        $schedule->call('App\Http\Controllers\ApiController@airforecast')
+//            ->everySixHours();
+        $schedule->call('App\Http\Controllers\ApiController@airforecast')
+            ->everyMinute();
     }
 
     /**

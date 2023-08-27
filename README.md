@@ -1,66 +1,143 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<p align="center"/><a href="https://laravel.com" target="_blank">
+    <img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400">
+</a></p>
 
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
+<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+# Laravel 9 Weather & Air Forecasting
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Welcome to the Laravel 9 Weather & Air Forecasting App, where accurate weather and air quality predictions are just a click away. Our application harnesses the power of Laravel, a popular PHP framework, to deliver real-time weather and air quality forecasts to users around the world. Whether you're planning a trip, staying informed about air quality, or just curious about the weather, our app provides you with the information you need.
+Here's a step-by-step guide & command:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Step 1 : Clone git project
+```
+git clone https://github.com/sanwarhossainkhan/laravel-python.git
+```
+### Step 2 : Goto Project directory
+```
+cd .\laravel-python\
+```
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Step 3 : Composer install
+```
+Composer install
+```
 
-## Learning Laravel
+### Step 4 : Rename .env file & add this
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+```
+OPENWEATHER_API_KEY=api_key
+```
+goto https://openweathermap.org/api signup and generate free api key. 
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### Step 5 :  Add this code config/app.php file 
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+```
+'openweather_api_key' => env('OPENWEATHER_API_KEY'),
+```
 
-## Laravel Sponsors
+### Step 6 :  Migrate
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+```
+php artisan migrate
+```
 
-### Premium Partners
+### Step 7 :  Schedule run
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+```
+php artisan schedule:run 
+```
+
+### Step 8 :  Check this url
+
+```
+http://127.0.0.1:8000/
+```
+
+### Step 9 :  Output
+
+--Current Weather Status.
+--Weather Forecasting.
+--Air Forecasting.
+
+###  You can set any Country Wise City weather
+
+change Apicontroller.php file array list. just add your city list in this $bangladeshCities = []
+
+```
+protected $bangladeshCities = [
+        'Bandarban',
+        'Barisal',
+        'Bhola',
+        'Bogra',];
+```
 
 ## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Welcome to the Laravel 9 Weather & Air Forecasting project! We appreciate your interest in contributing to our project. By contributing, you're helping us improve the app and provide better weather and air quality forecasts to users around the world. Whether you're a developer, designer, tester, or just passionate about weather data, there are many ways you can contribute.
+
+### How to Contribute
+
+1. **Fork the Repository:** Start by forking this repository to your GitHub account. This will create a copy of the project that you can work on.
+
+2. **Clone the Fork:** Clone the forked repository to your local machine using the `git clone` command. Replace `{username}` with your GitHub username:
+
+   ```bash
+   git clone https://github.com/{username}/laravel-weather-forecast.git
+   cd laravel-weather-forecast
+
 
 ## Code of Conduct
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+We, the contributors and maintainers of the Laravel 9 Weather & Air Forecasting project, are committed to creating a welcoming and respectful community for everyone. Our project follows the guidelines outlined in this Code of Conduct to ensure a positive experience for all participants. By participating in this project, you agree to abide by these guidelines.
 
-## Security Vulnerabilities
+### Our Pledge
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+In the interest of fostering an open and inclusive environment, we pledge to:
 
-## License
+- Be respectful and considerate towards others.
+- Welcome individuals from all backgrounds and experiences.
+- Value diverse perspectives and ideas.
+- Address conflicts constructively and resolve disagreements respectfully.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### Expected Behavior
+
+All project participants are expected to:
+
+- Be courteous, kind, and empathetic in interactions.
+- Use inclusive language and respect differing opinions.
+- Be open to constructive feedback and willing to learn and grow.
+- Focus on the content of discussions and avoid personal attacks or insults.
+
+### Unacceptable Behavior
+
+Unacceptable behavior includes, but is not limited to:
+
+- Harassment, intimidation, or discrimination based on race, gender, sexual orientation, religion, or any other personal characteristic.
+- Offensive comments, derogatory language, or trolling.
+- Publishing others' private information without permission.
+- Disruptive behavior or unwelcome advances.
+
+### Reporting Incidents
+
+If you experience or witness unacceptable behavior, please report it by contacting the project maintainers at [sanowar.khan@live.com](mailto:sanowar.khan@live.com). All reports will be kept confidential and will be promptly reviewed and addressed.
+
+### Enforcement
+
+In cases where a participant violates this Code of Conduct, appropriate actions will be taken, which may include warnings, temporary or permanent bans from project participation, or other actions as deemed necessary by the project maintainers.
+
+### Our Responsibility
+
+The project maintainers are responsible for clarifying and enforcing our Code of Conduct. They have the right and responsibility to remove, edit, or reject comments, code, or other contributions that do not align with this Code of Conduct.
+
+### Acknowledgment
+
+By participating in this project, you agree to abide by this Code of Conduct and help create a safe and positive experience for all community members.
+
+Thank you for contributing to the Laravel 9 Weather & Air Forecasting project and helping us maintain a respectful and inclusive community.
+

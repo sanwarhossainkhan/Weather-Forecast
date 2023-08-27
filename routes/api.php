@@ -20,5 +20,8 @@ use App\Http\Controllers\ApiController;
 //});
 
 Route::get('data',[ApiController::class,'getWeather']);
-Route::get('alldata',[ApiController::class,'weatherdata']);
+Route::get('alldata',[ApiController::class,'weather_data_api']);
 Route::get('forecast',[ApiController::class,'Weatherforecast']);
+Route::get('allforecast',[ApiController::class,'weather_forecast_data_api']);
+Route::get('airforecast',[ApiController::class,'airforecast']);
+Route::get('airforecastdata',[ApiController::class,'airforecastdata']);

@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('api_data', function (Blueprint $table) {
             $table->id();
             $table->string('city');
-            $table->string('data');
+            $table->longText('data');
             $table->timestamps();
         });
     }

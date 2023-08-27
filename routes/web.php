@@ -1,6 +1,8 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ApiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,7 +15,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('welcome',[ApiController::class,'weatherdata'])->name('home');
+Route::get('/',[ApiController::class,'weatherdata']);
+Route::get('area',function (){
+    return view('area');
+})->name('area');
+Route::get('data',[ApiController::class,'getWeather']);
+
+Route::get('forecast',[ApiController::class,'Weatherforecast']);
+Route::get('allforecast/{id}',[ApiController::class,'weather_forecast_data_city'])->name('weather_forecast_data_city');
+Route::get('air-forecast/{id}',[ApiController::class,'air_forecast_data_city'])->name('air_forecast_data_city');
+Route::get('airforecast',[ApiController::class,'airforecast']);
+Route::get('airforecastdata',[ApiController::class,'airforecastdata']);
 
